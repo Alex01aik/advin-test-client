@@ -1,0 +1,10 @@
+.buttons{
+    display: flex;
+    gap: 4px;
+}
+
+.button{
+    background-color: gainsboro;
+    color: #0077cc;
+    flex: auto;
+}
