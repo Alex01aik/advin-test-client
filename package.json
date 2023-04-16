@@ -4,9 +4,6 @@
   "private": true,
   "dependencies": {
     "@hookform/resolvers": "^3.0.1",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
     "history": "~4.10.1",
     "mobx": "^6.9.0",
     "mobx-react-lite": "^3.4.3",
@@ -47,6 +44,9 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.23",
     "@types/react": "^18.0.35",
