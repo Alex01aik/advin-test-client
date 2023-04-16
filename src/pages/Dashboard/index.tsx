@@ -10,6 +10,7 @@ const Dashboard: React.FC<DashboardProps> = () => {
   const history = useHistory();
   return (
     <div className={styles.page}>
+      <span>Congratulations! You are logined</span>
       <button
         onClick={() => {
           authService.logout();

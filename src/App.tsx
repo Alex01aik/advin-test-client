@@ -14,7 +14,6 @@ function App(): React.ReactElement {
           <Route path="/login" component={LoginPage} />
           <Route path="/register" component={RegisterPage} />
           <PrivateRoute path="/dashboard" component={Dashboard} />
-          <Route path="*" component={() => <div>Not Found</div>} />
           <Redirect to="/login" />
         </Switch>
       </Router>
