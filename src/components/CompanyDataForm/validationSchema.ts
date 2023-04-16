@@ -7,5 +7,10 @@ export const schema = yup.object().shape({
     .required()
     .test('fileRequired', 'File is required', (value: any) => {
       return value && value.length > 0;
-    }),
+    })
+    .test(
+      'allowedType',
+      'invalid type',
+      (value: any) => value[0].type === 'application/pdf' || value[0].type === 'application/msword'
+    ),
 });

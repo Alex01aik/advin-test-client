@@ -30,7 +30,7 @@ const CompanyDataForm: React.FC<CompanyDataFormProps> = (props) => {
       </label>
       <label>
         Upload File:
-        <input type="file" {...register('file')} />
+        <input type="file" {...register('file')} accept=".pdf,.doc,.docx" />
         {errors.file && <span className={styles.error}>{errors.file.message?.toString()}</span>}
       </label>
       <button type="submit">Register</button>

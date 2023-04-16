@@ -1,7 +1,7 @@
 import { makeAutoObservable } from 'mobx';
 import { query } from '../../utils';
-import AuthService from '../../services/authService';
-import HistoryService from '../../services/historyService';
+import authService from '../../services/authService';
+import historyService from '../../services/historyService';
 
 export const roles = ['user', 'company'];
 
@@ -24,14 +24,14 @@ export type UserDataType = Partial<UserCredsType & UserRoleType>;
 class RegisterPageModel {
   private steps = ['creds', 'role', 'company'];
   private userData: UserDataType | null = null;
-  private authStore;
-  private historyService;
   currentStep = this.steps[0];
 
   constructor() {
     makeAutoObservable(this);
-    this.authStore = AuthService;
-    this.historyService = HistoryService;
+  }
+
+  resetSteps() {
+    this.currentStep = this.steps[0];
   }
 
   prevStep = () => {
@@ -90,8 +90,9 @@ class RegisterPageModel {
 
   private auth(isAuth: boolean) {
     if (isAuth) {
-      this.authStore.setAuth();
-      this.historyService.go('/dashboard');
+      authService.setAuth();
+      this.resetSteps();
+      historyService.go('/dashboard');
     }
   }
 }
